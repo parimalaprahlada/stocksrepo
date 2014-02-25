@@ -1,39 +1,42 @@
 #d=[[('Script','CoalIndia'),('Qty','801'),('IPORate','297')],
 #[('Script','esl'),('Qty','3442'),('IPORate','11')],
 #[('Script','MCX'),('Qty','8'),('IPORate','1032')]]
-d=[[('Script','CoalIndia'),('Qty',801),('IPORate',297)],
-[('Script','ESL'),('Qty',3442),('IPORate',11)],
-[('Script','MCX'),('Qty',8),('IPORate',1032)],
-[('Script','ADANIPOWER'),('Qty',368),('IPORate',100)],
-[('Script','BRIGADE'),('Qty',57),('IPORate',390)],
-[('Script','ENGINERSIN'),('Qty',119),('IPORate',290)],
-[('Script','IFCI'),('Qty',1),('IPORate',60)],
-[('Script','L%26TFH'),('Qty',353),('IPORate',52)],
-[('Script','OIL'),('Qty',57),('IPORate',1050)],
-[('Script','PFC'),('Qty',500),('IPORate',200)],
-[('Script','RPOWER'),('Qty',16),('IPORate',450)],
-[('Script','RECLTD'),('Qty',121),('IPORate',105)],
-[('Script','SJVN'),('Qty',338),('IPORate',26)],
-[('Script','MYSOREBANK'),('Qty',13),('IPORate',575)],
-[('Script','VIJAYABANK'),('Qty',1),('IPORate',60)],
-[('Script','STAN'),('Qty',209),('IPORate',99.8)]]
-for i in xrange(len(d)):
-		d1=float(d[i][1][1])
-		d2=float(d[i][2][1])
-		invt=reduce(lambda x,y:x*y,[d1,d2])
-		d[i].append(("Investment",invt))
+class myscripts:
+	def allscripts(self):
+		d=[[('Script','CoalIndia'),('Qty',801),('IPORate',297)],
+		[('Script','ESL'),('Qty',3442),('IPORate',11)],
+		[('Script','MCX'),('Qty',8),('IPORate',1032)],
+		[('Script','ADANIPOWER'),('Qty',368),('IPORate',100)],
+		[('Script','BRIGADE'),('Qty',57),('IPORate',390)],
+		[('Script','ENGINERSIN'),('Qty',119),('IPORate',290)],
+		[('Script','IFCI'),('Qty',1),('IPORate',60)],
+		[('Script','L%26TFH'),('Qty',353),('IPORate',52)],
+		[('Script','OIL'),('Qty',57),('IPORate',1050)],
+		[('Script','PFC'),('Qty',500),('IPORate',200)],
+		[('Script','RPOWER'),('Qty',16),('IPORate',450)],
+		[('Script','RECLTD'),('Qty',121),('IPORate',105)],
+		[('Script','SJVN'),('Qty',338),('IPORate',26)],
+		[('Script','MYSOREBANK'),('Qty',13),('IPORate',575)],
+		[('Script','VIJAYABANK'),('Qty',1),('IPORate',60)],
+		[('Script','STAN'),('Qty',209),('IPORate',99.8)]]
 
-script=[]
-for i in xrange(len(d)):
-	script.append(d[i][0][1])
+		for i in xrange(len(d)):
+			d1=float(d[i][1][1])
+			d2=float(d[i][2][1])
+			invt=reduce(lambda x,y:x*y,[d1,d2])
+			d[i].append(("Investment",invt))
 
+		script=[]
+		for i in xrange(len(d)):
+			script.append(d[i][0][1])
+	
 
-TotalInvestment=0
-for i in xrange(len(d)):
-	TotalInvestment = TotalInvestment + d[i][3][1]
+		TotalInvestment=0
+		for i in xrange(len(d)):
+			TotalInvestment = TotalInvestment + d[i][3][1]
 
 #print d
-print "Total Investment = ",  TotalInvestment
+		print "Total Investment = ",  TotalInvestment
 
 #for i in xrange(len(script)):
 #	print script[i]
@@ -55,3 +58,6 @@ print "Total Investment = ",  TotalInvestment
 #d.append(dict(zip('Investment','invt')))
 #print "Printing d[0] after modification"
 #print d
+#allscripts()
+#a2=myscripts()
+#a2.allscripts()
