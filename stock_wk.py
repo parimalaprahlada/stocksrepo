@@ -1,5 +1,6 @@
 import urllib2,cookielib
 import re
+import ow
 
 class currentvalue:
 	def get_current_stock_value(self):
