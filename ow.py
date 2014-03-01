@@ -1,9 +1,6 @@
-#d=[[('Script','CoalIndia'),('Qty','801'),('IPORate','297')],
-#[('Script','esl'),('Qty','3442'),('IPORate','11')],
-#[('Script','MCX'),('Qty','8'),('IPORate','1032')]]
 class myscripts:
-	def allscripts(self):
-		d=[[('Script','CoalIndia'),('Qty',801),('IPORate',297)],
+	def __init__(self):
+		self.d=[[('Script','CoalIndia'),('Qty',801),('IPORate',297)],
 		[('Script','ESL'),('Qty',3442),('IPORate',11)],
 		[('Script','MCX'),('Qty',8),('IPORate',1032)],
 		[('Script','ADANIPOWER'),('Qty',368),('IPORate',100)],
@@ -20,20 +17,20 @@ class myscripts:
 		[('Script','VIJAYABANK'),('Qty',1),('IPORate',60)],
 		[('Script','STAN'),('Qty',209),('IPORate',99.8)]]
 
-		for i in xrange(len(d)):
-			d1=float(d[i][1][1])
-			d2=float(d[i][2][1])
+		for i in xrange(len(self.d)):
+			d1=float(self.d[i][1][1])
+			d2=float(self.d[i][2][1])
 			invt=reduce(lambda x,y:x*y,[d1,d2])
-			d[i].append(("Investment",invt))
+			self.d[i].append(("Investment",invt))
 
-		script=[]
-		for i in xrange(len(d)):
-			script.append(d[i][0][1])
+		self.script=[]
+		for i in xrange(len(self.d)):
+			self.script.append(self.d[i][0][1])
 	
 
 		TotalInvestment=0
-		for i in xrange(len(d)):
-			TotalInvestment = TotalInvestment + d[i][3][1]
+		for i in xrange(len(self.d)):
+			TotalInvestment = TotalInvestment + self.d[i][3][1]
 
 #print d
 		print "Total Investment = ",  TotalInvestment
