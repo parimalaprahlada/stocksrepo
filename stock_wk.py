@@ -1,7 +1,6 @@
 import urllib2,cookielib
 import re
 import ow
-L=[]
 tt=ow.myscripts()
 
 for i in xrange(len(tt.script)):
@@ -19,9 +18,13 @@ for i in xrange(len(tt.script)):
 		content = page.read()
 		match=re.search(r'("lastPrice"):(("\d+[,]\d*[.?]\d*")|("\d*[.?]\d*"))',content)
 
-#		print (match.group(2))
-		L.append(tt.d[i][1][1])
-#		L.append(match.group(2))
+# following strips both single quotes and double quotes
+		strip_string=match.group(2).strip('\'"') 
 		
-		tt.d[i].append(("CurrentValue", match.group(2)))
+		tt.d[i].append(("CurrentValue", float(strip_string)))
+		d1=float(tt.d[i][1][1])
+		d2=float(tt.d[i][4][1])
+		invt=reduce(lambda x,y:x*y,[d1,d2])
+		tt.d[i].append(("CurrentInvst",invt))
+
 print tt.d
