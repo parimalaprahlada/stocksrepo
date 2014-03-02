@@ -1,7 +1,7 @@
 import urllib2,cookielib
 import re
 import ow
-
+L=[]
 tt=ow.myscripts()
 
 for i in xrange(len(tt.script)):
@@ -17,16 +17,11 @@ for i in xrange(len(tt.script)):
 			print e.fp.read()
 
 		content = page.read()
-#print content
-
-#m = re.search('id="lastPrice(.*?)"(.*)', content)
-#m = re.search('id="lastPrice"[:]', content)
 		match=re.search(r'("lastPrice"):(("\d+[,]\d*[.?]\d*")|("\d*[.?]\d*"))',content)
-#match=re.search(r'("lastPrice"):("\d*[.?]\d*")',content)
 
-		print (match.group(2))
-
-
-#a4=currentvalue()
-#a4.get_current_stock_value()
-
+#		print (match.group(2))
+		L.append(tt.d[i][1][1])
+#		L.append(match.group(2))
+		
+		tt.d[i].append(("CurrentValue", match.group(2)))
+print tt.d
