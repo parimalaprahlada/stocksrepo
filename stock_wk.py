@@ -26,5 +26,4 @@ for i in xrange(len(tt.script)):
 		d2=float(tt.d[i][4][1])
 		invt=reduce(lambda x,y:x*y,[d1,d2])
 		tt.d[i].append(("CurrentInvst",invt))
-
 print tt.d
