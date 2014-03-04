@@ -1,14 +1,14 @@
 class myscripts:
 	def __init__(self):
-		self.d=[[('Script','CoalIndia'),('Qty',801),('IPORate',297)],
+		self.d=[[('Script','CoalIndia'),('Qty',801),('IPORate',267)],
 		[('Script','ESL'),('Qty',3442),('IPORate',11)],
 		[('Script','MCX'),('Qty',8),('IPORate',1032)],
 		[('Script','ADANIPOWER'),('Qty',368),('IPORate',100)],
 		[('Script','BRIGADE'),('Qty',57),('IPORate',390)],
-		[('Script','ENGINERSIN'),('Qty',119),('IPORate',290)],
+		[('Script','ENGINERSIN'),('Qty',119),('IPORate',275)],
 		[('Script','IFCI'),('Qty',1),('IPORate',60)],
 		[('Script','L%26TFH'),('Qty',353),('IPORate',52)],
-		[('Script','OIL'),('Qty',57),('IPORate',1050)],
+		[('Script','OIL'),('Qty',143),('IPORate',418)],
 		[('Script','PFC'),('Qty',500),('IPORate',200)],
 		[('Script','RPOWER'),('Qty',16),('IPORate',450)],
 		[('Script','RECLTD'),('Qty',121),('IPORate',105)],
