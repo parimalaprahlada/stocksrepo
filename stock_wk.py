@@ -20,10 +20,18 @@ for i in xrange(len(tt.script)):
 
 # following strips both single quotes and double quotes
 		strip_string=match.group(2).strip('\'"') 
-		
+		pat=re.compile(r'\d\,')
+		if pat.findall(strip_string):
+			strip_string=strip_string.replace(",", "")
+
 		tt.d[i].append(("CurrentValue", float(strip_string)))
 		d1=float(tt.d[i][1][1])
 		d2=float(tt.d[i][4][1])
 		invt=reduce(lambda x,y:x*y,[d1,d2])
 		tt.d[i].append(("CurrentInvst",invt))
 print tt.d
+Returns = 0
+for i in xrange(len(tt.d)):
+	Returns = Returns + tt.d[i][5][1]
+
+print "Current value of Investment = ", Returns
