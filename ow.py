@@ -9,7 +9,6 @@ class myscripts:
 		[('Script','IFCI'),('Qty',1),('IPORate',60)],
 		[('Script','L%26TFH'),('Qty',353),('IPORate',52)],
 		[('Script','J%26KBank'),('Qty',477),('IPORate',1255)],
-		[('Script','YESBANK'),('Qty',2450),('IPORate',322.5)],
 		[('Script','OIL'),('Qty',143),('IPORate',418)],
 		[('Script','PFC'),('Qty',500),('IPORate',200)],
 		[('Script','RPOWER'),('Qty',16),('IPORate',450)],
